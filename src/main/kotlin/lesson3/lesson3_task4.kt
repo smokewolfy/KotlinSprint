@@ -5,12 +5,7 @@ fun main() {
     var moveTo = "E4"
     var moveCount = 1
 
-    var gameOutput = """
-        |Ход номер $moveCount
-        |Белые ходят:
-        |С $moveFrom на $moveTo
-        |
-    """.trimMargin()
+    var gameOutput = "[$moveFrom-$moveTo;$moveCount]"
 
     println(gameOutput)
 
@@ -18,12 +13,7 @@ fun main() {
     moveFrom = "D2"
     moveTo = "D3"
 
-    gameOutput = """
-        |Ход номер $moveCount
-        |Белые ходят:
-        |С $moveFrom на $moveTo
-        |
-    """.trimMargin()
+    gameOutput = "[$moveFrom-$moveTo;$moveCount]"
 
     println(gameOutput)
 }
