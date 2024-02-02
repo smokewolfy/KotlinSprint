@@ -12,10 +12,12 @@ fun main() {
 }
 fun average(weight: Int, value: Int){
 
-    val minWeight = 35
-    val maxWeight = 100
-    val maxValue = 100
+
 
     println( "Груз с весом $weight кг и объемом $value л соответствует категории 'Average': " +
-            "${(minWeight <= weight) && (weight >= maxWeight) && (value < maxValue)}\n")
+            "${(MIN_WEIGHT <= weight) && (weight >= MAX_WEIGHT) && (value < MAX_VALUE)}\n")
 }
+
+const val MIN_WEIGHT = 35
+const val MAX_WEIGHT = 100
+const val MAX_VALUE = 100
