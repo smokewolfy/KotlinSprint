@@ -6,7 +6,7 @@ fun main() {
     val result = firstNum * secondNum
     print("Решите пример: $firstNum * $secondNum = ")
     val input = readln().toInt()
-    if (input == result) println("Добро пожаловать!")
-    else println("Доступ запрещен.")
-    
+
+    if (input == result) println("Добро пожаловать!") else println("Доступ запрещен.")
+
 }
