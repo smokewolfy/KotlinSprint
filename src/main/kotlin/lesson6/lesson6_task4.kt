@@ -10,6 +10,8 @@ fun main() {
         if (readln().toInt() == number) {
             didNotWin = false
             println("Это была великолепная игра!")
+        }else{
+            println("Неверно.")
         }
     }
     if (didNotWin && tryCount == 0) {
