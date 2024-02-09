@@ -8,6 +8,7 @@ fun main() {
     var userPassword = ""
 
     do {
+
         //Проверка на регистрацию
         if (isNotSignUp) {
             print(
