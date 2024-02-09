@@ -2,14 +2,14 @@ package lesson6
 
 fun main() {
     var isNotSignUp = true
-    var isNotSignIn = true
+    var isNotSignIn: Boolean
 
     var userLogin = ""
     var userPassword = ""
 
-    while (isNotSignIn) {
-
-        while (isNotSignUp) {
+    do {
+        //Проверка на регистрацию
+        if (isNotSignUp) {
             print(
                 """Вы выбрали регистрацию
             |Введите логин: 
@@ -20,12 +20,12 @@ fun main() {
             userPassword = readln()
             isNotSignUp = !(userLogin.isNotEmpty() && userPassword.isNotEmpty())
         }
-
+        //Авторизация
         print("Введите логин для входа: ")
         val signInLogin = readln()
         print("Введите пароль для входа: ")
         val signInPassword = readln()
         isNotSignIn = !((userLogin == signInLogin) && (userPassword == signInPassword))
         if (!isNotSignIn) println("Авторизация прошла успешно")
-    }
+    } while (isNotSignIn)
 }
