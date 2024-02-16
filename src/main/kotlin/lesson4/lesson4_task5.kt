@@ -2,21 +2,21 @@ package lesson4
 
 fun main() {
     print("Наличие повреждений корабля(true/false): ")
-    val damage: Boolean = readln().toBoolean()
+    val isDamaged: Boolean = readln().toBoolean()
 
     print("Количество экипажа: ")
     val crew: Int = readln().toInt()
 
     print("Количество ящиков провизии: ")
-    val foodBoxes:Int = readln().toInt()
+    val foodBoxes: Int = readln().toInt()
 
     print("Погода благоприятна(true/false): ")
-    val favorableWeather: Boolean = readln().toBoolean()
+    val isGoodWeather: Boolean = readln().toBoolean()
 
-    val sailorable:Boolean = (IS_DAMAGED == damage) &&
+    val sailorable: Boolean = (IS_DAMAGED == isDamaged) &&
             (MIN_CREW <= crew) && (crew <= MAX_CREW) &&
             (MIN_FOOD_BOXES <= foodBoxes) &&
-            (FAVORABLE_WEATHER == favorableWeather)
+            (FAVORABLE_WEATHER == isGoodWeather)
 
     println("Возможность к отправлению: $sailorable")
 
