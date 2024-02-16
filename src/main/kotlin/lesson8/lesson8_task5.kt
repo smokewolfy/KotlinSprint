@@ -5,7 +5,7 @@ fun main() {
     val array = Array<String>(readln().toInt()) { "" }
     for (i in array.indices) {
         print("Введите элемент №${i + 1}: ")
-        array.set(i, readln())
+        array[i] = readln()
     }
     println("Ваш массив: " + array.joinToString())
 }
