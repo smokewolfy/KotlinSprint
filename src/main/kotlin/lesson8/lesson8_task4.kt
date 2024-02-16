@@ -9,12 +9,12 @@ fun main() {
     while (true) {
         print("What ingredient you want to change? ")
         val ingredientToChange = readln()
-        if (ingredientToChange !in recipe) {
+        if (recipe.indexOf(ingredientToChange) == -1) {
             println("$ingredientToChange is not in recipe.")
             continue
         } else {
             print("What ingredient you want to add? ")
-            recipe.set(recipe.indexOf(ingredientToChange), readln())
+            recipe[recipe.indexOf(ingredientToChange)] = readln()
         }
         break
     }
