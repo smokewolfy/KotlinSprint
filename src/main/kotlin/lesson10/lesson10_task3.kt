@@ -3,10 +3,10 @@ package lesson10
 fun main() {
     print("Enter password length: ")
     val passwordLength = readln().toInt()
-    println(passwordGenerator(passwordLength))
+    println(generatePassword(passwordLength))
 }
 
-fun passwordGenerator(length: Int): String {
+fun generatePassword(length: Int): String {
     var password = ""
     for (i in 0 until length) {
         password += if (i % 2 == 0) {
