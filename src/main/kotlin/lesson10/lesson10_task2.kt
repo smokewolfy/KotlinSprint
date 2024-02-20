@@ -5,15 +5,16 @@ fun main() {
     val login = readln()
     print("Enter you password: ")
     val password = readln()
-    checkingRegistrationInfoLength(login, password)
+    println(
+        if (checkInfoLength(login) && checkInfoLength(password)) {
+            "Greetings!"
+        } else {
+            "Login \"$login\" and(or) password \"$password\" in not long enough."
+        }
+    )
 }
 
-fun checkingRegistrationInfoLength(login: String, password: String) {
-    if (login.length >= minLength && password.length >= minLength) {
-        println("Greetings!")
-    }else{
-        println("Login \"$login\" and(or) password \"$password\" in not long enough.")
-    }
-}
+fun checkInfoLength(string: String): Boolean = string.length >= minLength
+
 
 const val minLength = 4
