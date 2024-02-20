@@ -1,5 +1,7 @@
 package lesson9
 
+import java.util.*
+
 fun main() {
     println("Введите 5 ингредиентов: ")
     var list: MutableList<String> = mutableListOf()
@@ -7,7 +9,7 @@ fun main() {
     list = list
         .sorted()
         .joinToString(separator = " ")
-        .capitalize()
+        .replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }
         .split(" ")
         .toSet()
         .toMutableList()
