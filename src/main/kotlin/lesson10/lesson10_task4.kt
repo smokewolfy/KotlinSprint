@@ -1,31 +1,30 @@
 package lesson10
 
 fun main() {
-    var roundCounter = 0
+    var winCounter = 0
     val human = "Meatbag"
     val computer = "Computer"
     do {
-        makeRound(human, computer)
-        roundCounter++
+        if (makeRound(human, computer) == human) winCounter++
         print("Do you want to play again?(yes/no)")
         println()
-
         if (readln() == "yes") {
             println()
             continue
         } else break
 
     } while (true)
-
-    println("Round played: $roundCounter")
+    println("Win rounds: $winCounter")
 }
+
 
 fun throwDice(): Int {
     val diceRange = 1..6
     return diceRange.random()
 }
 
-fun makeRound(firstPlayer: String, secondPlayer: String) {
+
+fun makeRound(firstPlayer: String, secondPlayer: String): String {
     val firstPlayerResult = throwDice()
     val secondPlayerResult = throwDice()
     println("$firstPlayer throwing dice. Result: $firstPlayerResult")
@@ -39,4 +38,5 @@ fun makeRound(firstPlayer: String, secondPlayer: String) {
             }
         }\n"
     )
+    return if (firstPlayerResult > secondPlayerResult) firstPlayer else secondPlayer
 }
