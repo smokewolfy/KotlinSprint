@@ -3,11 +3,11 @@ package lesson11
 class Room(
     private val label: String,
     private val roomName: String,
-    private val userList: MutableList<User> = mutableListOf(),
+    private val userList: MutableList<VoiceUser> = mutableListOf(),
     private val voiceStateList: List<String> = listOf("speak", "mic off", "muted user"),
 ) {
     fun addUser(avatar: String, name: String) {
-        userList.add(User(userAvatar = avatar, userName = name, voiceState = voiceStateList[1]))
+        userList.add(VoiceUser(userAvatar = avatar, userName = name, voiceState = voiceStateList[1]))
     }
 
     fun updateState(userIndex: Int, stateIndex: Int) {
@@ -20,7 +20,7 @@ class Room(
 
 }
 
-class User(
+class VoiceUser(
     private val userAvatar: String,
     private val userName: String,
     var voiceState: String
