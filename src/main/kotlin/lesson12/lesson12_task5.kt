@@ -36,7 +36,6 @@ fun main() {
         )
         dayTempList.add(weather.getDayTemp())
         nightTempList.add(weather.getNightTemp())
-
         dailyPrecipitationList.add(weather.getPrecipitation())
 
     }
