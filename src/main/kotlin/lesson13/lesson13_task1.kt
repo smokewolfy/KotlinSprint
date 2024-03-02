@@ -1,9 +1,9 @@
 package lesson13
 
 class Phonebook(_name: String, _phonenumber: Long, _brand: String?){
-    val name:String = _name
-    val phoneNumber: Long = _phonenumber
-    val brand: String? = _brand
+    private val name:String = _name
+    private val phoneNumber: Long = _phonenumber
+    private val brand: String? = _brand
 }
 
 
