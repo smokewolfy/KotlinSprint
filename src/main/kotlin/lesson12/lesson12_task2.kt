@@ -1,6 +1,6 @@
 package lesson12
 
-class DailyWeather(private var dayTemp: Int, private var nightTemp: Int, private var isPrecipitation: Boolean) {
+class DayWeather(private var dayTemp: Int, private var nightTemp: Int, private var isPrecipitation: Boolean) {
 
     fun setDayTemp(temp: Int) {
         dayTemp = temp
@@ -22,7 +22,7 @@ class DailyWeather(private var dayTemp: Int, private var nightTemp: Int, private
 
 
 fun main() {
-    val monday = DailyWeather(25,20, false)
+    val monday = DayWeather(25,20, false)
     monday.showDayWeather()
     monday.setDayTemp(28)
     monday.setNightTemp(25)
