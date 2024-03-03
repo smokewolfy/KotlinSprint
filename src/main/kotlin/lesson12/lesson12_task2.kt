@@ -2,15 +2,6 @@ package lesson12
 
 class DayWeather(private var dayTemp: Int, private var nightTemp: Int, private var isPrecipitation: Boolean) {
 
-    fun setDayTemp(temp: Int) {
-        dayTemp = temp
-    }
-    fun setNightTemp(temp: Int) {
-        nightTemp = temp
-    }
-    fun setPrecipitation(isPrecipitation: Boolean) {
-        this.isPrecipitation = isPrecipitation
-    }
     fun showDayWeather(){
         println("""
             Today's temperature: $dayTemp
@@ -23,10 +14,6 @@ class DayWeather(private var dayTemp: Int, private var nightTemp: Int, private v
 
 fun main() {
     val monday = DayWeather(25,20, false)
-    monday.showDayWeather()
-    monday.setDayTemp(28)
-    monday.setNightTemp(25)
-    monday.setPrecipitation(false)
     monday.showDayWeather()
 
 }
