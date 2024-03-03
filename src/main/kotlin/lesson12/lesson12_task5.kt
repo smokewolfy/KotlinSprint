@@ -40,8 +40,8 @@ fun main() {
 
     }
 
-    println("Average temperature during the day in month: ${dayTempList.sum() / 30}C")
-    println("Average temperature at night in month: ${nightTempList.sum() / 30}C")
+    println("Average temperature during the day in month: ${dayTempList.average().toInt()}C")
+    println("Average temperature at night in month: ${nightTempList.average().toInt()}C")
     var daysWithPrecipitation = 0
     dailyPrecipitationList.map { if (it) ++daysWithPrecipitation }
     println("Days with precipitation: $daysWithPrecipitation")
