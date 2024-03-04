@@ -1,19 +1,21 @@
 package lesson12
 
-class DayWeather(private var dayTemp: Int, private var nightTemp: Int, private var isPrecipitation: Boolean) {
+class DayWeather(private var dayTemp: Int, private var nightTemp: Int, private val isPrecipitation: Boolean) {
 
-    fun showDayWeather(){
-        println("""
+    fun showDayWeather() {
+        println(
+            """
             Today's temperature: $dayTemp
             Tonight's temperature: $nightTemp
             Precipitation till day: ${if (isPrecipitation) "Yes" else "No"}
-        """.trimIndent())
+        """.trimIndent()
+        )
     }
 }
 
 
 fun main() {
-    val monday = DayWeather(25,20, false)
+    val monday = DayWeather(25, 20, false)
     monday.showDayWeather()
 
 }
