@@ -19,6 +19,6 @@ fun main() {
         Contact("Dexter Morgan", 13056868544, "Miami Police Department")
     )
     val contactsWithCompany = phonebook.mapNotNull { it.getCompany() }
-    contactsWithCompany.map { println(it) }
+    contactsWithCompany.forEach { println(it) }
 }
 
