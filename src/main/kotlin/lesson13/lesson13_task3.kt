@@ -1,18 +1,12 @@
 package lesson13
 
-class Contact(_name: String, _phonenumber: Long, _brand: String? = null) {
+class Contact(_name: String, _phonenumber: Long, _company: String? = null) {
     private val name: String = _name
     private val phoneNumber: Long = _phonenumber
-    private val brand: String? = _brand
+    private val company: String? = _company
 
-    fun printContactInfo() {
-        println("Name: $name")
-        println("Phone number: $phoneNumber")
-        println("Brand: ${brand ?: "no info"}")
-    }
-
-    fun getBrand(): String {
-        return brand ?: ""
+    fun getCompany(): String? {
+        return company
     }
 }
 
@@ -24,6 +18,7 @@ fun main() {
         Contact("John Doe", 88002000600, "Natyajnie Potolki SPB"),
         Contact("Dexter Morgan", 13056868544, "Miami Police Department")
     )
-    phonebook.map { if (it.getBrand().isNotEmpty()) println(it.getBrand()) }
+    val contactsWithCompany = phonebook.mapNotNull { it.getCompany() }
+    contactsWithCompany.map { println(it) }
 }
 
