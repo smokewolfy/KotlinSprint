@@ -1,7 +1,7 @@
 package lesson12
 
 
-class WeatherMaster(_dayTemp: Float, _nightTemp: Float, _isPrecipitation: Boolean) {
+class WeatherKeeper(_dayTemp: Float, _nightTemp: Float, _isPrecipitation: Boolean) {
 
     private var dayTemp: Int = (_dayTemp - 273.15).toInt()
     private var nightTemp: Int = (_nightTemp - 273.15).toInt()
@@ -20,5 +20,5 @@ class WeatherMaster(_dayTemp: Float, _nightTemp: Float, _isPrecipitation: Boolea
 }
 
 fun main() {
-    val monday = WeatherMaster(300f, 280f, true)
+    val monday = WeatherKeeper(300f, 280f, true)
 }
