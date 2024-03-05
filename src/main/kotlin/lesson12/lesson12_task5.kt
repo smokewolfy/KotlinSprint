@@ -3,7 +3,7 @@ package lesson12
 import kotlin.random.Random
 
 
-class WeatherMaster(_dayTemp: Double, _nightTemp: Double, _isPrecipitation: Boolean) {
+class WeatherSuperMaster(_dayTemp: Double, _nightTemp: Double, _isPrecipitation: Boolean) {
 
     private var dayTemp: Int = (_dayTemp - 273.15).toInt()
     fun getDayTemp(): Int {
@@ -23,12 +23,12 @@ class WeatherMaster(_dayTemp: Double, _nightTemp: Double, _isPrecipitation: Bool
 }
 
 fun main() {
-    val weatherList: MutableList<WeatherMaster> = mutableListOf()
+    val weatherList: MutableList<WeatherSuperMaster> = mutableListOf()
     val dayTempList: MutableList<Int> = mutableListOf()
     val nightTempList: MutableList<Int> = mutableListOf()
     val dailyPrecipitationList: MutableList<Boolean> = mutableListOf()
     for (i in 0..29) {
-        val weather = WeatherMaster(
+        val weather = WeatherSuperMaster(
             Random.nextDouble(273.15, 310.0), Random.nextDouble(273.15, 310.0), Random.nextBoolean()
         )
         weatherList.add(
