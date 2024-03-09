@@ -17,7 +17,7 @@ class Planet(
 ) : AstronomicalBody(name, hasAtmosphere, isPossibleToLand) {
 
     private var satelliteList: MutableList<Satellite> = mutableListOf()
-    fun getSatelliteList(): MutableList<Satellite> {
+    private fun getSatelliteList(): MutableList<Satellite> {
         return satelliteList
     }
 
@@ -29,6 +29,7 @@ class Planet(
     ) : this(name, hasAtmosphere, isPossibleToLand) {
         this.satelliteList = satelliteList
     }
+
     fun getSatelliteNameList()=this.getSatelliteList().map { it.getName() }
 
 
