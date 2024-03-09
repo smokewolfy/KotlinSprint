@@ -44,19 +44,25 @@ class Square(
 
 fun main() {
     val figureList: MutableList<Figure> = mutableListOf(
-        Square("black", 20.0),
-        Square("white", 10.0),
-        Circle("black", 10.0),
-        Circle("white", 5.0)
+        Square(Colours.BLACK.color, 20.0),
+        Square(Colours.WHITE.color, 10.0),
+        Circle(Colours.BLACK.color, 10.0),
+        Circle(Colours.WHITE.color, 5.0)
     )
     println(
         "Black figures perimeter sum: ${
-            figureList.filter { it.getColor() == "black" }.sumOf { it.getPerimeter() }
+            figureList.filter { it.getColor() == Colours.BLACK.color }.sumOf { it.getPerimeter() }
         }"
     )
     println("White figures area sum: ${
-            figureList.filter { it.getColor() == "white" }.sumOf { it.getArea() }
+            figureList.filter { it.getColor() == Colours.WHITE.color }.sumOf { it.getArea() }
         }"
     )
+
+}
+
+enum class Colours(val color: String){
+    WHITE("white"),
+    BLACK("black"),
 
 }
