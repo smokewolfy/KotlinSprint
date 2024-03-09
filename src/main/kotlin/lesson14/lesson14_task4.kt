@@ -25,10 +25,12 @@ class Planet(
         name: String,
         hasAtmosphere: Boolean,
         isPossibleToLand: Boolean,
-        satelliteList: MutableList<Satellite>
+        satelliteList: MutableList<Satellite>,
     ) : this(name, hasAtmosphere, isPossibleToLand) {
         this.satelliteList = satelliteList
     }
+    fun getSatelliteNameList()=this.getSatelliteList().map { it.getName() }
+
 
 }
 
@@ -36,8 +38,7 @@ class Satellite(
     name: String,
     hasAtmosphere: Boolean,
     isPossibleToLand: Boolean,
-) :
-    AstronomicalBody(name, hasAtmosphere, isPossibleToLand)
+) : AstronomicalBody(name, hasAtmosphere, isPossibleToLand)
 
 fun main() {
     val planet = Planet(
@@ -47,7 +48,6 @@ fun main() {
             Satellite("Phobos", hasAtmosphere = false, isPossibleToLand = false)
         )
     )
-    val satelliteList = planet.getSatelliteList().map { it.getName() }
-    print("Planet - ${planet.getName()}, it has satellite: ${satelliteList.joinToString(separator = ", ")}.")
 
+    print("Planet - ${planet.getName()}, it has satellite: ${planet.getSatelliteNameList().joinToString(separator = ", ")}.")
 }
