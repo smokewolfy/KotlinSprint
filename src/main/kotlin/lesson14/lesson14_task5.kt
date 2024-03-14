@@ -39,9 +39,9 @@ class Chat() {
 
 
 open class Message(
-    val parentMessageID: Int,
-    val authorName: String,
-    val messageText: String,
+    internal val parentMessageID: Int,
+    internal val authorName: String,
+    internal val messageText: String,
 
     )
 
@@ -49,7 +49,7 @@ class ChildMessage(
     parentMessageID: Int,
     authorName: String,
     messageText: String,
-    val childMessageID: Int
+    internal val childMessageID: Int
 
 ) :
     Message(
