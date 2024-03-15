@@ -1,9 +1,11 @@
 package lesson15
 
-abstract class BaseUser {
-    abstract val login: String
-    abstract val password: String
-    abstract val id: Int
+abstract class BaseUser(
+    protected val login: String,
+    protected val password: String,
+    protected val id: Int,
+) {
+
     fun readForum(forumMessages: MutableList<String>) {
         println("Сообщения на форуме:")
         forumMessages.forEach { println(it) }
@@ -15,17 +17,17 @@ abstract class BaseUser {
     }
 }
 
-data class User(
-    override val login: String,
-    override val id: Int,
-    override val password: String,
-) : BaseUser()
+class User(
+    login: String,
+    password: String,
+    id: Int
+) : BaseUser(login, password, id)
 
-data class Admin(
-    override val login: String,
-    override val id: Int,
-    override val password: String,
-) : BaseUser() {
+class Admin(
+    login: String,
+    password: String,
+    id: Int
+) : BaseUser(login, password, id) {
     fun deleteMessage(forumMessages: MutableList<String>, index: Int) {
         println("Андминистратор $login удаляет сообщение: ${forumMessages[index]}")
         forumMessages.removeAt(index)
@@ -35,8 +37,8 @@ data class Admin(
 
 fun main() {
     val forumMessages: MutableList<String> = mutableListOf()
-    val user = User(login = "Login", 0, password = "password")
-    val admin = Admin(login = "Admin", 1, password = "admin")
+    val user = User(login = "Login", password = "password", id = 0)
+    val admin = Admin(login = "Admin", password = "admin", id = 1)
     user.writeMessage(forumMessages, "Hello fellow")
     user.readForum(forumMessages)
     admin.deleteMessage(forumMessages, 0)
