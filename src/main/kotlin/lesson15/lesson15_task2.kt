@@ -1,18 +1,20 @@
 package lesson15
 
-abstract class WeatherStationStats(val amount: Int, val units: String) {
+abstract class WeatherStationStats(
+    val amount: Int,
+    val units: String,
+)
 
-}
-
-class Temperature(amount: Int, units: String = "°C") : WeatherStationStats(amount, units) {
-
-
-}
+class Temperature(
+    amount: Int,
+    units: String = "°C",
+) : WeatherStationStats(amount, units)
 
 
-class PrecipitationAmount(amount: Int, units: String = "mm") : WeatherStationStats(amount, units) {
-
-}
+class PrecipitationAmount(
+    amount: Int,
+    units: String = "mm",
+) : WeatherStationStats(amount, units)
 
 
 class WeatherServer {
