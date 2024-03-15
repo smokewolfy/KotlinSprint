@@ -22,7 +22,7 @@ class Chat() {
 
         val chatView = messageList.groupBy(keySelector = { it.parentMessageID }, valueTransform =
         {
-            if (it is ChildMessage) "   ${it.authorName}: ${it.messageText}\n"
+            if (it is ChildMessage) "\t${it.authorName}: ${it.messageText}\n"
             else
                 "${it.authorName}: ${it.messageText}\n"
         })
