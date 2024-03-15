@@ -27,7 +27,6 @@ class WeatherServer {
                 "Выпало осадков: $output"
             }
         )
-
     }
 }
 
