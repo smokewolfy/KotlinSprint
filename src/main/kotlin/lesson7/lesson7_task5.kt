@@ -2,30 +2,21 @@ package lesson7
 
 fun main() {
     print("Введите желаемую длинну пароля: ")
-    val passwordSize = passwordLengthProcess(readln())
+    val passwordSize = passwordLengthProcess(readln()) - COUNT_OF_CHAR_TYPES
     val lowerCaseCharRange = 'a'..'z'
     val upperCaseCharRange = 'A'..'Z'
     val digitRange = '0'..'9'
+    val allChars = lowerCaseCharRange + upperCaseCharRange + digitRange
+    var password = "" + lowerCaseCharRange.random() + upperCaseCharRange.random() + digitRange.random()
+    println(password)
 
-    val charsCountList = calculateCountOfChars(passwordSize)
-
-    var password = ""
-    for (step in charsCountList[0] downTo 1) {
-        password += upperCaseCharRange.random()
-    }
-    for (step in charsCountList[1] downTo 1) {
-        password += digitRange.random()
-    }
-    for (step in charsCountList[2] downTo 1) {
-        password += lowerCaseCharRange.random()
+    for (step in passwordSize downTo 1) {
+        password += allChars.random()
     }
 
     password = password.shuffle()
     println(password)
 }
-
-
-
 
 
 fun String.shuffle(): String {
@@ -36,12 +27,6 @@ fun String.shuffle(): String {
     return string.shuffled().joinToString("")
 }
 
-fun calculateCountOfChars(passwordSize: Int):List<Int>{
-    val upperCharCount = passwordSize / COUNT_OF_CHAR_TYPES
-    val digitCount = passwordSize / COUNT_OF_CHAR_TYPES
-    val lowerCharCount = passwordSize - (digitCount + upperCharCount)
-    return listOf(upperCharCount, digitCount, lowerCharCount)
-}
 
 fun passwordLengthProcess(inputLength: String): Int {
     val passwordLength = try {
@@ -51,6 +36,7 @@ fun passwordLengthProcess(inputLength: String): Int {
                 println("Установленна минимальная величина - 6")
                 6
             }
+
             else -> inputLength.toInt()
         }
     } catch (e: Exception) {
