@@ -8,22 +8,15 @@ fun main() {
     val inputLogin = readln()
     println("Введите пароль: ")
     val inputPassword = readln()
-    println( returnAuthorisationResult(userLogin, userPassword, userShopList, inputLogin, inputPassword))
+    println(
+        if (verification(userLogin, userPassword, inputLogin, inputPassword) != null) {
+            "Приветствую, ${userLogin}. Ваша корзина:\n${userShopList.joinToString(separator = ", ")}"
+        } else {
+            "Авторизация неудалась. Попробуйте еще раз."
+        }
+    )
 }
 
-fun returnAuthorisationResult(
-    userLogin: String,
-    userPassword: String,
-    userShopList: List<String>,
-    inputLogin: String,
-    inputPassword: String
-): String {
-    return if (verification(userLogin, userPassword, inputLogin, inputPassword) != null) {
-        "Приветствую, ${userLogin}. Ваша корзина:\n${userShopList.joinToString(separator = ", ")}"
-    } else {
-        "Авторизация неудалась. Попробуйте еще раз."
-    }
-}
 
 fun verification(userLogin: String, userPassword: String, inputLogin: String, inputPassword: String): String? {
     val isVerified = userLogin.lowercase() == inputLogin.lowercase() && userPassword == inputPassword
