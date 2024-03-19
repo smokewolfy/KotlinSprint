@@ -21,10 +21,10 @@ class WeatherServer {
     fun sendMessage(data: WeatherStationStats) {
         val output = "${data.amount}${data.units}"
         println(
-            if (data is Temperature) {
-                "Температура на улице: $output"
-            } else {
-                "Выпало осадков: $output"
+            when (data) {
+                is Temperature -> "Температура на улице: $output"
+                is PrecipitationAmount -> "Выпало осадков: $output"
+                else -> "Получены неизвестные данные."
             }
         )
     }
