@@ -1,8 +1,10 @@
 package lesson15
 
+open class Product(val name: String, val count: Int)
+
 interface Searchable {
     val accessoriesList: MutableList<Accessory>
-    fun search(accessoryName: String){
+    fun search(accessoryName: String) {
         println("Выполняется поиск...")
         Thread.sleep(3000)
         var accessoryCount = 0
@@ -16,19 +18,16 @@ interface Searchable {
 }
 
 class Instrument(
-    private val name: String,
-    private val count: Int,
-) : Searchable {
+    name: String,
+    count: Int,
+) : Searchable, Product(name, count) {
     override val accessoriesList: MutableList<Accessory> = mutableListOf()
     fun addAccessory(name: String, count: Int) {
         accessoriesList.add(Accessory(name, count))
     }
-
-
-
 }
 
-class Accessory(val name: String, val count: Int)
+class Accessory(name: String, count: Int) : Product(name, count)
 
 fun main() {
     val instrument = Instrument(name = "guitar", count = 2)
