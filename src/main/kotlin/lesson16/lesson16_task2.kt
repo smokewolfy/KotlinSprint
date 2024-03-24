@@ -1,6 +1,6 @@
 package lesson16
 
-class Circle(private val radius: Float){
+class Circle(private val radius: Float,){
     private val pi = 3.14f
     fun calcCircumference(): Float{
         return pi * radius * 2
