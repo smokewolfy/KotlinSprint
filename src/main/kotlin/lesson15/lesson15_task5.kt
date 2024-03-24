@@ -7,7 +7,6 @@ interface Driveable {
 interface CargoTransportable {
     var cargoWeight: Int
     fun cargoLoading(cargoWeightToLoad: Int)
-
     fun cargoUnloading(cargoWeightToUnload: Int)
 }
 
@@ -57,7 +56,6 @@ class Car : Driveable, PassengersTransportable {
                 "В машине осталось $passengersCount."
         )
     }
-
 }
 
 class Truck : Driveable, PassengersTransportable, CargoTransportable {
@@ -81,7 +79,6 @@ class Truck : Driveable, PassengersTransportable, CargoTransportable {
         }
         print("Готово. ")
         println("Село пассажиров - $passengersCount")
-
     }
 
     override fun disembark(passengersToDisembark: Int) {
@@ -131,7 +128,6 @@ class Truck : Driveable, PassengersTransportable, CargoTransportable {
             }
         )
     }
-
 }
 
 fun main() {
