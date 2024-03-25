@@ -12,7 +12,7 @@ class Hero(
     fun hit(): Int = (0..hitPower).random()
 
     fun heal() {
-        if (health < 91) health += 10 else health = 100
+        if (health < 91  && isAlive) health += 10 else health = 100
     }
 
     fun getDamage(damageValue: Int) {
