@@ -2,10 +2,10 @@ package lesson17
 
 class Quiz(_question: String, _answer: String) {
     var question: String = _question
-        get() = "Question - $field"
+        get() = field
 
     var answer: String = _answer
-        get() = "Your answer - $field"
+        get() = field
         set(value) {
             field = value
         }
