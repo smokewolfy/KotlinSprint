@@ -1,6 +1,8 @@
 package lesson18
 
-open class Animal(val name: String) {
+open class Animal(
+    val name: String,
+) {
     open val food: String = "корм"
 
     fun play() {
@@ -18,8 +20,7 @@ open class Animal(val name: String) {
 
 class Fox(
     name: String,
-
-    ) : Animal(name) {
+) : Animal(name) {
     override val food: String = "ягоды"
 }
 
