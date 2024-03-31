@@ -1,6 +1,10 @@
 package lesson17
 
-class ParcelTracker(private val parcelID: Int, _currentLocation: String, private val destinationPoint: String) {
+class ParcelTracker(
+    private val parcelID: Int,
+    _currentLocation: String,
+    private val destinationPoint: String,
+) {
     var currentLocation = _currentLocation
         set(value) {
             field = value
