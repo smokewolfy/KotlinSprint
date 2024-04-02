@@ -1,21 +1,44 @@
 package lesson18
 
-class Parcel(val volume: Int)
-
-class Box {
-    fun volumeCalc(length: Int): Int {
-        return length * length * length
+class ParcelInfoKeeper {
+    val boxValuesList: MutableList<Int> = mutableListOf()
+    fun addBoxValueToList(length: Int) {
+        boxValuesList.add(SquareBox(length).volumeCalc())
     }
 
-    fun volumeCalc(length: Int, height: Int, width: Int): Int{
+    fun addBoxValueToList(length: Int, height: Int, width: Int) {
+        boxValuesList.add(RectangleBox(length, height, width).volumeCalc())
+    }
+}
+
+abstract class Box {
+    abstract fun volumeCalc(): Int
+}
+
+class SquareBox(
+    private val length: Int,
+) : Box() {
+    override fun volumeCalc(): Int {
+        return length * length * length
+    }
+}
+
+class RectangleBox(
+    private val length: Int,
+    private val height: Int,
+    private val width: Int,
+) : Box() {
+    override fun volumeCalc(): Int {
         return length * height * width
     }
 }
 
 
 fun main() {
-    val parcel1 = Parcel(volume = Box().volumeCalc(length = 10))
-    val parcel2 = Parcel(volume = Box().volumeCalc(10, 12, 15))
-    println(parcel1.volume)
-    println(parcel2.volume)
+    val parcelInfoKeeper = ParcelInfoKeeper()
+    parcelInfoKeeper.addBoxValueToList(10)
+    parcelInfoKeeper.addBoxValueToList(15, 20, 30)
+    parcelInfoKeeper.boxValuesList.forEach{
+        println(it)
+    }
 }
