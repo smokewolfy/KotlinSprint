@@ -1,6 +1,6 @@
 package lesson19
 
-enum class Fishes(val fishName: String){
+enum class Fishes(val fishName: String) {
     GUPPY("Гуппи"),
     ANGELFISH("Скалярия"),
     GOLDFISH("Золотая рыбка"),
