@@ -1,6 +1,6 @@
 package lesson18
 
-open class Animal(
+abstract class Animal(
     val name: String,
 ) {
     open val food: String = "корм"
