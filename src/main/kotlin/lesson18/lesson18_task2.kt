@@ -1,23 +1,23 @@
 package lesson18
 
-abstract class Dice{
+abstract class Dice {
     open val maxDiceValue = 8
     open fun throwDice(): Int = (MIN_DICE_VALUE..maxDiceValue).random()
 }
 
-class FourGradeDice: Dice(){
+class FourGradeDice : Dice() {
     override val maxDiceValue: Int = 4
 }
 
-class SixGradeDice: Dice(){
+class SixGradeDice : Dice() {
     override val maxDiceValue: Int = 6
 }
 
-class EightGradeDice:Dice()
+class EightGradeDice : Dice()
 
 fun main() {
     val diceList: List<Dice> = listOf(FourGradeDice(), SixGradeDice(), EightGradeDice())
-    diceList.forEach{
+    diceList.forEach {
         println(it.throwDice())
     }
 }
