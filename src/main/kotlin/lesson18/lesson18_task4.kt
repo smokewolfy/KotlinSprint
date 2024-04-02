@@ -3,7 +3,7 @@ package lesson18
 class ParcelInfoKeeper {
     val boxValuesList: MutableList<Int> = mutableListOf()
     fun addBoxValueToList(length: Int) {
-        boxValuesList.add(Qube(length).volumeCalc())
+        boxValuesList.add(QubeBox(length).volumeCalc())
     }
 
     fun addBoxValueToList(length: Int, height: Int, width: Int) {
@@ -15,7 +15,7 @@ abstract class Box {
     abstract fun volumeCalc(): Int
 }
 
-class Qube(
+class QubeBox(
     private val length: Int,
 ) : Box() {
     override fun volumeCalc(): Int {
