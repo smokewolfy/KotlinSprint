@@ -8,8 +8,9 @@ class Player(val name: String, var currentHealth: Int) {
 }
 
 fun main() {
+    val healthPotionValue = 25
     val drinkHealingPotion = {player: Player ->
-        player.currentHealth += 25
+        player.currentHealth += healthPotionValue
         if (player.currentHealth > player.maxHealth) player.currentHealth = player.maxHealth
         println("${player.name} found a Healing Potion, and enjoying it.")
     }
