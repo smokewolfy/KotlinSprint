@@ -6,14 +6,7 @@ fun main() {
 }
 
 fun String.vowelCount(): Int {
-
-    var vowelCount = 0
-    for (i in this.indices) {
-        if (this[i] in vowels)
-             vowelCount++
-    }
-
-    return vowelCount
+    return this.count { it in VOWELS }
 }
 
-const val vowels = "aeiouyAEIOUY"
+const val VOWELS = "aeiouyAEIOUY"
