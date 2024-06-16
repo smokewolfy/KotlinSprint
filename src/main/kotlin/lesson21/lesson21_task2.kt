@@ -6,9 +6,5 @@ fun main() {
 }
 
 fun List<Int>.evenNumbersSum(): Int {
-    var evenSum = 0
-    this.forEach {
-        if ((it % 2) == 0) evenSum += it
-    }
-    return evenSum
+    return this.filter { it % 2 == 0}.sum()
 }
