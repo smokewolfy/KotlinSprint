@@ -6,6 +6,5 @@ fun main() {
 }
 
 fun Map<String, Int>.maxCategory(): String {
-    val name = this.maxBy { it.value }
-    return name.key
+    return this.maxBy { it.value }.key
 }
