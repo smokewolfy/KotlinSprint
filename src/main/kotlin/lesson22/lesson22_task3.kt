@@ -8,11 +8,11 @@ data class Animal(
 
 fun main() {
     val frog = Animal("Pepe", false, 1)
-    val animalName = frog.name
-    val animalHasClaws = frog.hasClaws
-    val animalTailLength = frog.tailLength
-    println("""Animal's name: $animalName. 
+    val (animalName, animalHasClaws, animalTailLength) = frog
+    println(
+        """Animal's name: $animalName. 
         |Animal has claws: $animalHasClaws.
         |Animal's tail length: $animalTailLength.
-    """.trimMargin())
+    """.trimMargin()
+    )
 }
